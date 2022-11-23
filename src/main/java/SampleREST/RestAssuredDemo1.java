@@ -1,6 +1,9 @@
+package SampleREST;
+
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;
+
 
 public class RestAssuredDemo1 {
 
