@@ -76,5 +76,23 @@ public class ComplexJson {
 
         // 6. Verify if Sum of all Course prices matches with Purchase Amount
 
+        int sum = 0;
+        for (int i=0;i<numberOfCourses;i++)
+        {
+            int coursePrice  = jsonPath.get("courses["+i+"].price");
+            int courseCopies  = jsonPath.get("courses["+i+"].copies");
+            int total = coursePrice * courseCopies;
+            sum = sum + total;
+        }
+
+        System.out.println("purchaseAmount="+purchaseAmount);
+        System.out.println("sum="+sum);
+
+        if(purchaseAmount==sum)
+            System.out.println("Pricing is correct");
+        else
+            System.out.println("Pricing is incorrect");
+
+
         }
 }
