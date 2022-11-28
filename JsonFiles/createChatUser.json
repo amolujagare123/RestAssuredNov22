@@ -1,0 +1,21 @@
+{
+  "username": "rahul",
+  "password": "rahul123",
+  "email": "rahul@example.org",
+  "name": "rahul",
+  "surname": "Ujagare",
+  "chat_nickname": "r12",
+  "departments": [
+    1,
+    2
+  ],
+  "departments_read": [
+    2
+  ],
+  "department_groups": [
+    1
+  ],
+  "user_groups": [
+    1
+  ]
+}
