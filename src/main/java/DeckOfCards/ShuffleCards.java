@@ -22,9 +22,10 @@ public class ShuffleCards {
 
         System.out.println("deckId="+deckId);
 
-        given().log().all().queryParam("count","1")
+        given().log().all().queryParam("count","2")
                 .when().get("/api/deck/"+deckId+"/draw/")
                 .then().log().all().assertThat().statusCode(200);
+
 
     }
 }
