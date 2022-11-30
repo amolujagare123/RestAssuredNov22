@@ -1,7 +1,7 @@
 package JopPortal;
 
-import POJOClasses.JobPortalPOJO;
-import POJOClasses.Project;
+import POJOClasses.request.JobPortalPOJO;
+import POJOClasses.request.Project;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 

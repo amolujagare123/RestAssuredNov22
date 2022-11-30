@@ -1,11 +1,9 @@
 package SampleREST;
 
-import POJOClasses.CreateSampleUserPOJO;
+import POJOClasses.request.CreateSampleUserPOJO;
 import io.restassured.RestAssured;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

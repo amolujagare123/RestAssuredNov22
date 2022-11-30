@@ -1,8 +1,7 @@
 package DeckOfCards;
 
-import POJOClasses.DrawCardsPOJO;
+import POJOClasses.response.DrawCardsPOJO;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,4 +1,4 @@
-package POJOClasses;
+package POJOClasses.response;
 
 public class Cards {
 

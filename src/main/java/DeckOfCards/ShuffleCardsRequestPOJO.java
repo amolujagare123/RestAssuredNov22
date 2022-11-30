@@ -1,6 +1,6 @@
 package DeckOfCards;
 
-import POJOClasses.ShuffleCardsPOJO;
+import POJOClasses.response.ShuffleCardsPOJO;
 import io.restassured.RestAssured;
 
 import static io.restassured.RestAssured.given;

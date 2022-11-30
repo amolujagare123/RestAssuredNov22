@@ -1,22 +1,21 @@
 package ChatServer;
 
-import POJOClasses.CreateChatUserPOJO;
+import POJOClasses.request.CreateChatUserPOJO;
+import POJOClasses.response.CreateChatUserResponse;
 import io.restassured.RestAssured;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import static io.restassured.RestAssured.given;
 
-public class CharServerCreatUserWithPOJO {
+public class ChatServerCreatUserForResponseWithPOJO {
 
     public static void main(String[] args) throws IOException {
 
         CreateChatUserPOJO ob = new CreateChatUserPOJO();
 
-        ob.setUsername("rahul123");
+        ob.setUsername("rahul222");
         ob.setPassword("r1234");
         ob.setEmail("rahul@gmail.com");
         ob.setName("rahul");
@@ -54,10 +53,19 @@ public class CharServerCreatUserWithPOJO {
 
         RestAssured.baseURI = "http://localhost:80/chat/lhc_web/index.php/site_admin";
 
-        given().log().all().auth().preemptive().basic("admin","admin123")
+        CreateChatUserResponse createChatUserResponse = given().log().all().auth().preemptive().basic("admin","admin123")
                 .header("Content-Type","application/json")
                 .body(ob)
                 .when().post("/restapi/user")
-                .then().log().all().assertThat().statusCode(200);
+                .then().log().all().assertThat().statusCode(200)
+                .extract().response().as(CreateChatUserResponse.class);
+
+        System.out.println("username="+createChatUserResponse.getResult().getUsername());
+        System.out.println("password="+createChatUserResponse.getResult().getPassword());
+        System.out.println("name="+createChatUserResponse.getResult().getName());
+        System.out.println("surname="+createChatUserResponse.getResult().getSurname());
+        System.out.println("email="+createChatUserResponse.getResult().getEmail());
+        System.out.println("nickName="+createChatUserResponse.getResult().getChat_nickname());
+
     }
 }
